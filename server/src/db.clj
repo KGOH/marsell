@@ -11,12 +11,12 @@
 
 (comment
   (jdbc/db-do-commands db
-                       (jdbc/create-table-ddl :persone user))
+                       (jdbc/create-table-ddl :person user))
 
-  (jdbc/insert! db :persone {:name "Фу Бар Базович"})
+  (jdbc/insert! db :person {:name "Фу Бар Базович"})
 
-  (jdbc/query db ["SELECT * FROM persone"])
-  (jdbc/query db ["DELETE FROM persone"])
+  (jdbc/query db ["SELECT * FROM person"])
+  (jdbc/query db ["DELETE FROM person"])
 
   (jdbc/db-do-commands db
-                       (jdbc/drop-table-ddl :persone user)))
+                       (jdbc/drop-table-ddl :person user)))
